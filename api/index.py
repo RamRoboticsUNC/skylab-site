@@ -17,6 +17,11 @@ templates = Jinja2Templates(directory=str(BASE_DIR / "templates"))
 app.mount("/assets", StaticFiles(directory=str(BASE_DIR / "static" / "assets")), name="assets")
 app.mount("/images", StaticFiles(directory=str(BASE_DIR / "static" / "images")), name="images")
 
+@app.get("/favicon.ico")
+async def favicon():
+    """Serve favicon"""
+    return FileResponse(str(BASE_DIR / "static" / "favicon.ico"))
+
 @app.get("/", response_class=HTMLResponse)
 def read_root(request: Request):
     """Serve the main page"""
