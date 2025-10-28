@@ -6,10 +6,8 @@ from pathlib import Path
 
 app = FastAPI(title="Carolina Skylab", description="Carolina Skylab Site")
 
-# Get the directory where this file is located
 BASE_DIR = Path(__file__).parent.parent
 
-# Setup templates
 templates = Jinja2Templates(directory=str(BASE_DIR / "templates"))
 
 # Serve favicon
