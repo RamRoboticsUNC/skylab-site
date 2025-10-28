@@ -27,9 +27,14 @@ app.mount("/assets", StaticFiles(directory=str(BASE_DIR / "static" / "assets")),
 app.mount("/images", StaticFiles(directory=str(BASE_DIR / "static" / "images")), name="images")
 
 @app.get("/", response_class=HTMLResponse)
-def read_root(request: Request):
+def main_page(request: Request):
     """Serve the main page"""
     return templates.TemplateResponse("index.html", {"request": request})
+
+@app.get("/apply", response_class=HTMLResponse)
+def apply_page(request: Request):
+    return templates.TemplateResponse("apply.html", {"request": request})
+
 
 # For local development with uvicorn
 if __name__ == "__main__":
