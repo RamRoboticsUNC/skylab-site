@@ -4,7 +4,6 @@ from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
 from pathlib import Path
 
-# Create FastAPI app
 app = FastAPI(title="Carolina Skylab", description="Carolina Skylab Site")
 
 # Get the directory where this file is located
