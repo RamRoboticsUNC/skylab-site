@@ -9,6 +9,7 @@
   :root{
     --hero-bg:  url('{{ request.url_for("images", path="bg.png") }}');
     --drone-bg: url('{{ request.url_for("images", path="dronebg.png") }}');
+    --video-bg: url('{{ request.url_for("images", path="videoposter.png") }}');
   }
 </style>
 
@@ -51,11 +52,6 @@
   </section>
 
   <section class="about-section" id="about">
-  <video autoplay muted loop playsinline class="bg-video">
-    <source src="{{ request.url_for('images', path='videobg.mov') }}" type="video/mp4">
-    Your browser does not support the video tag.
-  </video>
-
   <div class="about-content">
     <h2>Who We Are</h2>
     <p>
